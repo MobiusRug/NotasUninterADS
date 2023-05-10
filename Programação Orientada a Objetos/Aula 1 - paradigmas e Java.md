@@ -239,7 +239,7 @@ LT
 ```
 
 
-### HISTÓRICO POO
+# HISTÓRICO POO
 
 -  foi pela primeira vez aplicado de forma adaptada na linguagem de programação Simula 67, nos anos de 1960, posteriormente também sendo utilizado de forma exclusiva na linguagem Smalltalk da Xerox.
 - Sua grande popularidade influenciou todas as principais linguagens de programação de hoje, C++, C#, PHP, Python e Java
@@ -439,12 +439,20 @@ String text = "first second third fourth";
 String[] pieces = text.split(" ");
 ```
 
+#### FORMATANDO VARIÁVEIS
+```JAVA
+int i = 461012;
+System.out.format("The value of i is: %d%n", i);
+```
+%d para inteiros. %f para float
+
 ### ARRAYS
 
 - Declarados entre chaves e acessados com colchetes indexados do 0
 
 ```Java
-String[] nomes = {"Mario", "Luigi", "Peach", "Yoshi"};
+int[] numbers = new int[3]; //define tamanho
+String[] nomes = {"Mario", "Luigi", "Peach", "Yoshi"}; //cria array e já atribui valores
 nomes[0] = "Bowser"
 ```
 - Possui diversos métodos como por exemplo `lenght()`
@@ -473,7 +481,7 @@ A declaração dos tipos dos valores da lista deve ser declarado com maiúscula,
 >Guardam o valor atribuído - *int, double, float, boolean*
 >
 >**Variáveis Tipo Referência:**
->Contém uma referência ao endereço do valor  - *String, ArrayLists*
+>Contém uma referência ao endereço do valor  - *String, ArrayLists* - são objetos
 
 #### Métodos 
 
@@ -525,3 +533,4 @@ for (String teacher: teachers) {
     System.out.println(teacher);
 }
 ```
+

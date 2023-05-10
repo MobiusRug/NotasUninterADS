@@ -26,7 +26,7 @@ Usado para configurar opções do GIT
 - `$ git config –list`
 
 ### git init
-- Inicializa um novoi repositório Git em um diretório existente
+- Inicializa um novo repositório Git em um diretório existente
 - Cria uma pasta oculta .git
 - Arquivo HEAD - mantém histórico das alterações realizadas no projeto 
 

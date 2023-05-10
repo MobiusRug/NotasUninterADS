@@ -201,8 +201,7 @@ System.out.println("Menor: "+Collections.min(lista));
 ```Java
 ArraylList<Integer> lista = new ArrayList();
 HashsSet<Integer> conjunto = new HashSet<Integer>();
-HashMap<String,Integer> mapa = new
-HashMap<String, Integer>();
+HashMap<String,Integer> mapa = new HashMap<String, Integer>();
 
 int soma;
 
@@ -228,3 +227,37 @@ while(it.hasNext()) {
 - `remove()` - remove um elemento
 
 # CLASSE LOCALDATE
+
+- Biblioteca `java.util.LocalDate `
+- Cada data é um objeto LocalDate
+- `.now()` recupera a data no momento da execução do código
+- `DateTimeFormatter` estabelece formatações para datas e horários
+	• dd = dia do mês em dois dígitos;
+	• MM = mês em dois dígitos;
+	• yyyy = ano em quatro dígitos;
+	• HH = horas, até 23, em dois dígitos;
+	• mm = minutos em dois dígitos;
+	• ss = segundos em dois dígitos;
+	• hh = horas, até 12, em dois dígitos;
+	• d = dia do mês em um ou dois dígitos;
+	• M = mês do ano em um ou dois dígitos;
+	• yy = ano em dois dígitos;
+	• H = horas, até 23, em um ou dois dígitos;
+	• m = minutos em um ou dois dígitos;
+	• s = segundos em um ou dois dígitos;
+	• h = horas, até 12, em um ou dois dígitos.
+
+``` Java
+public static void main(String[] args) {
+
+//Captura a data de hoje
+LocalDate dataHoje = LocalDate.now();
+
+System.out.println("original: " + dataHoje);
+DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+String dataForm= hoje.format(formatador);
+
+System.out.println("Formatado : " + dataForm);
+}
+
+```

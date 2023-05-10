@@ -14,7 +14,7 @@ De forma geral cada objeto possui três aspectos principais:
 - A convenção é criar um arquivo separado para cada classe
 
 ![[Pasted image 20230424085016.png]]
-- public static void main(String[] args), só pode existir um único método main no projeto
+- `public static void main(String[] args)`, só pode existir um único método main no projeto
 - Numa classe devemos declarar os atributos dos objetos que ela representam
 
 ``` Java
@@ -167,3 +167,4 @@ public class MainProgram {
 }
 ```
 
+- ArrayList como atributo precisa ser inicializado
