@@ -1,7 +1,7 @@
 # CLASSES E ATRIBUTOS
 
 -  Os **objetos** são os elementos em si que compõem o nosso sistema
--  As **classes** classificam um conjunto de objetos que pertençam a um mesmo conjunto - possuem os mesmos atributos.
+-  As [[Aula 5 - UML - Diagrama de Classes#CLASSES | classes]] classificam um conjunto de objetos que pertençam a um mesmo conjunto - possuem os mesmos atributos.
 
 De forma geral cada objeto possui três aspectos principais:
 - **Atributos:** São as variáveis que descrevem o objeto.

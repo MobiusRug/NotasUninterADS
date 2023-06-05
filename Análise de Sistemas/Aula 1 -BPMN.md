@@ -64,7 +64,7 @@
 
 # BPMN
 
-- o BPM é uma disciplina de gestão que combina processos de negócio, pessoas, tecnologia e organização para criar uma visão única e integrada de negócios.
+- o BPM é uma disciplina de gestão que combina *processos de negócio, pessoas, tecnologia e organização* para criar uma visão única e integrada de negócios.
 - O BPM propõe a utilização da notação BPMN para modelagem
 
 ## VISÃO MACRO DO BPMN 
