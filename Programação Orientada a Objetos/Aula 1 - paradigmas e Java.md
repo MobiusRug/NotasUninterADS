@@ -313,6 +313,11 @@ public class Main {
 Hello World!
 ```
 
+- O código deve estar dentro de uma classe
+- um programa Java possui uma entrada que é uma função (método) `main`
+- Para compilar o código no terminal utiliza-se o comando `javac`  `javac Programa.java`
+- Para executar o programa compilado utiliza-se o comando `java` `java Programa`
+
 
 # VISÃO GERAL SOBRE O CÓDIGO JAVA
 
@@ -402,6 +407,17 @@ for (inicialização; expressão enquanto; iteração){
 `continue` para voltar ao começo do loop
 
 ## TIPOS DE DADOS 
+
+|TIPO|TAMANHO|
+|---|---|
+|boolean|1 bit|
+|byte|1 byte|
+|short|2 bytes|
+|char|2 bytes|
+|int|4 bytes|
+|float|4 bytes|
+|long|8 bytes|
+|double|8 bytes|
 
 ### STRING
 - Declarada com `String`

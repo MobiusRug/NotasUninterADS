@@ -149,3 +149,30 @@ PRIMAVERA
 -   É possível fazer um loop por todas estações utilizando o método `values()`
 -   Normalmente é declarado no próprio arquivo como uma classe, mas também pode ser declarado dentro de uma classe existente para ser utilizado localmente
 -   em Java suas constantes são sempre entendidas como public, static, final
+- possui métodos como 
+	- `name()`
+	- `ordinal()
+
+- Passando valor para as constantes:
+
+```java
+public enum Prioridade{
+	MIN(1), NORMAL(5), MAX(10);
+
+	private int valor;
+
+	Prioridade(int valor){
+		this.valor = valor;
+	}
+
+	public int getValor(){
+		return this.valor;
+	}
+}
+
+public class Teste{
+
+	Proridade pMin = Prioridade.Min;
+}
+
+```

@@ -34,12 +34,56 @@
 ```java
 try {
     // code which possibly throws an exception
-} catch (Exception e) {
+} catch (Exception e ) {
     // code block executed if an exception is thrown
 } finally {
 	//será sempre executado - até mesmo se tiver return nos blocos anteriores
 }
 ```
+- finally é utilizado normalmente para liberar recursos
+- é possível também liberar recursos implementando a classe autocloseable - try with resources 
+
+```java
+public class TesteConexao{
+	public static void main(String[] args){
+
+		try(Conexao conexao = new Conexao()){
+			conexao.leDados();
+		}catch(IllegalSateException ex){
+			System.out.println("Deu erro na conexão")
+		}
+
+	}
+}
+
+public class Conexao implements AutoCloseable{
+
+	public Conexao(){
+		System.out.println("Abrindo conexão");
+		//throw new IllegalStateException();
+	}
+
+	public void leDados(){
+		System.out.println("Recebendo dados");
+		threow new IllegamStateException();
+	}
+
+	@Override
+	public void close(){
+		System.out.println("Fechando Conexao")
+	}
+}
+
+```
+
+```output
+Abrindo conexão
+Recendo dados
+Fechando conexão
+Deu erro na conexão
+```
+
+
 
 # CRIANDO AS PRÓPRIAS EXCEÇÕES
 
@@ -71,7 +115,7 @@ public class Grade {
 	- são verificadas em tempo de compilação 
 	- precisam ser tratadas com try/catch ou explicitamente anunciar na assinatura do método que pode lançar esse tipo de exceção com a palavra throws
 	- caso não sejam tratadas, o compilador gerará um erro
-- **unchecked**
+- **unchecked**  - RuntimeException
 	- não são checadas em tempo de compilação
 	- fica livre ao programador decidir se precaver com o uso de try/catch ou não 
 	- RuntimeException
@@ -83,6 +127,19 @@ public class Grade {
 
 - é possível criar a sua própria exceção subclasse de Exception ou RuntimeException e até mesmo Error. 
 - Ao criar uma exceção que estende Exception, ela será do tipo checada e, se ela estender RuntimeException, será do tipo não checada. 
+
+```java
+public class MinhaExcecao extends RuntimeException{
+
+	public MinhaExcecao(String msg)
+		super(msg);
+}
+```
+
+## MÉTODOS DAS EXCEÇÕES
+
+- `.getMessage()`
+- `printStackTrace()` - rastro da exceção
 
 # IGUALDADE 
 
@@ -110,6 +167,7 @@ public boolean equals(object outro) {
 
 ```
 
+
 # TOSTRING
 
 - a classe Object possui o método toString() que, por padrã,o retorna uma String com o endereço na memória daquele objeto.
@@ -124,7 +182,21 @@ public class Person {
     }
 }
 
+public class Grade {
+    private int grade;
 
+    public Grade(int grade) {
+        if (grade < 0 || grade > 5) {
+            throw new MinhaExceccao("deu muito errado");
+        }
+
+        this.grade = grade;
+    }
+
+    public int getGrade() {
+        return this.grade;
+    }
+}
 ```
 
 

@@ -112,15 +112,15 @@
 
 
 $$
-\Large \neg(\neg p)⇔ p
+ \neg(\neg p)⇔ p
 $$
 ### LEIS IDEMPOTENTES
 
 $$
-\Large p\lor p⇔ p 
+ p\lor p⇔ p 
 $$
 $$
-\Large p \land p⇔ p
+ p \land p⇔ p
 $$
 
 ### COMUTATIVIDADE

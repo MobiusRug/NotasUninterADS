@@ -161,3 +161,10 @@ print(p)
 ```
 
 # ARITMÉTICA MODULAR 
+- é um sistema de aritmética para inteiros, onde os números "retrocedem" quando atingem um certo valor, o **módulo**
+- Dado um inteiro $n>1$ , chamado módulo, dois inteiros são considerados *congruentes* (ou côngruos) módulo $n$ n, se $n$  for um divisor de sua diferença (ou seja, se houver um inteiro $k$ tal que $\large a − b = k n$ ).
+$$
+a \equiv b \pmod{n}
+$$
+
+Ex: $\large 15 \equiv 3 \pmod{12}$, 3 é o resto da divisão de 15 por 12
