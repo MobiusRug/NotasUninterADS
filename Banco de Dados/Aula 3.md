@@ -115,7 +115,7 @@ insert into ntabela values
 	(valor1, ..., valorn);
 ```
 
-```sql
+```mysql
 insert into usuario (id, email, senha) values
 	(1, ‘maria.lopes@email.com’, ‘M1256779@’);
 ```
@@ -169,7 +169,7 @@ select * from usuario where email is null;
 `coluna tipodado restrição,
 	`primary key(coluna)`
 
-```sql
+```mysql
 create table estado (
 	id integer not null,
 	descricao varchar(100),
@@ -190,7 +190,7 @@ create table estado (
 - comportamento - On delete no action on update no action.
 - comportamentos referem-se à ação que será executada pelo Banco de Dados quando o usuário tentar excluir ou alterar o valor de uma chave primária que está sendo utilizada em outra tabela como chave estrangeira
 
-```Sql
+```mySql
 create table cidade (
 	id integer not null,
 	estado_id integer not null,
@@ -200,7 +200,7 @@ create table cidade (
 	on delete no action on update no action);
 ```
 
-```sql
+```mysql
 CREATE TABLE cliente(
 	id INT PRIMARY KEY,
     nome VARCHAR(100),
@@ -213,7 +213,7 @@ CREATE TABLE cliente(
 - Chaves candidatas
 `coluna tipodado(tamanho) unique`
 
-```SQL
+```mySQL
 create table entregador (
 	id integer not null,
 	cidade_id integer not null,
@@ -232,7 +232,7 @@ create table entregador (
 
 `constrant nomeRestricao primary key (col1,...coln)`
 
-```sql
+```mysql
 create table pedidoProduto (
 	pedido_id integer not null,
 	produto_id integer not null,
@@ -256,7 +256,7 @@ create table pedidoProduto (
 - impedirá que uma coluna aceite um valor nulo 
 `coluna tipo de dado(tamanho) not null`
 
-```sql
+```mysql
  create table usuario (
 	id integer not null,
 	email varchar(100) not null,
@@ -271,7 +271,7 @@ create table pedidoProduto (
 
 Dentro da restrição check é necessário informar a coluna, que receberá a validação, a cláusula in e os valores correspondentes (todos entre parênteses).
 
-```sql
+```mysql
 genero char(01) check(genero in(‘M’, ‘F’))
 ```
 
@@ -280,7 +280,7 @@ genero char(01) check(genero in(‘M’, ‘F’))
 - Definição de um valor padrão associado a uma coluna
 `coluna tipodado(tamanho) default valorpadrao`
 
-```sql
+```mysql
 create table cliente (
 	id integer not null,
 	nome varchar(150),
@@ -292,7 +292,7 @@ create table cliente (
 
 - podemos aplicar várias restrições em uma mesma coluna
 
-```sql
+```mysql
 genero char(01) check(genero in(‘M’,‘F’)) default ‘M’
 ```
 

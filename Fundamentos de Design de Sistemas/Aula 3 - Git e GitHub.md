@@ -15,6 +15,12 @@ Uma das ferramentas mais populares para controle de versionamento
 ### REPOSITÓRIO GIT
 É o local em que ficam os arquivos do projeto, que serão controlados por versionamento.
 
+### Estados do GIT
+- Untracked
+- Unmodified
+- Modified
+- Staged
+
 
 ## CONFIGURANDO O GIT 
 
@@ -81,7 +87,7 @@ git log <file>
 git log --since=<YYYY-MM--DD> --UNTIL=<YYYY-MM-DD>
 ```
 
-visualizar todos commits em uma linha `git log --oneline`
+visualizar todos commits em uma linha `git log --oneline`, outros opções `--decorate`
 visualizar as alterações feitas pelos commit `git log -p`    q para sair
 `git log --help`
 
@@ -96,8 +102,13 @@ git status
 git status <branch>
 ```
 
+#### GIT RESTORE
+- Desfaz quaisquer unstaged changes 
+- Modified -> último commit
+- Para desfazer staged `git restore --staged`
 #### GIT RESET
-- Rertorna a um estado anterior de commit
+- Rertorna a um estado anterior de commit, ou seja desfaz as staged changes depois do git add 
+- Staged -> Modified
 
 ```
 git reset --tipo <ID_commit>
@@ -112,7 +123,9 @@ git reset <nome do arquivo>
 
 #### GIT DIFF
 
-- Mostra os detalhes das alterações nos arquivos
+- Mostra os detalhes das alterações nos arquivos 
+- o padrão é mostrar as diferenças no estado modified mas não staged
+- caso queira ver as diferenças no estado staged, antes do commit, utilizar `git diff --staged`
 
 ```
 git diff (diferença do que foi editado antes do add)
@@ -136,7 +149,7 @@ git branch
 git branch <nome da branch>
 ```
 
-### GIT CHECKOUT
+#### GIT CHECKOUT
 - Altera a branch atual de trabalho
 
 ```
@@ -168,6 +181,38 @@ git clone <nomeRepositorio>
 envia mudanças para repositório remoto 
 `git push -u origin master`
 
+#### GIT FETCH
+- utilizado para baixar conteúdos do repositorio remoto, sem aplicar as mudanças no working directory
+`git fetch`
+- é possível verificar as modificações com `git diff origin/master`
 
+#### GIT MERGE
+- utilizado para combinar alterações de um ramo em outro.
 
-
+1. **Selecionar o Ramo de Destino:** Começa-se por verificar o ramo no qual se deseja mesclar as alterações. Geralmente, este é o ramo no qual se deseja atualizar com as alterações de outro ramo.
+    
+    bashCopy code
+    
+    `git checkout ramo_de_destino`
+    
+2. **Executar o Comando de Mesclagem:** Após ter verificado o ramo de destino, utiliza-se o comando `git merge` para especificar o ramo de origem que se deseja mesclar no ramo de destino.
+    
+    bashCopy code
+    
+    `git merge ramo_de_origem`
+    
+    O `ramo_de_origem` contém as alterações que se deseja incorporar no `ramo_de_destino`.
+    
+3. **Resolver Conflitos:** Se houver conflitos entre os dois ramos (ou seja, alterações nas mesmas partes do código), o Git identificará esses conflitos. É necessário resolver manualmente esses conflitos, editando os arquivos afetados. Após resolver os conflitos, deve-se adicionar e confirmar as alterações.
+    
+4. **Confirmar a Mesclagem:** Após resolver quaisquer conflitos e efetuar as alterações necessárias, pode-se confirmar a mesclagem.
+    
+    bashCopy code
+    
+    `git commit -m "Mesclar o ramo 'ramo_de_origem' no 'ramo_de_destino'"`
+    
+5. **Enviar as Alterações:** Se estiver trabalhando em um repositório compartilhado, geralmente será necessário enviar as alterações mescladas para o repositório remoto para que fiquem disponíveis para os outros.
+    
+    bashCopy code
+    
+    `git push origin ramo_de_destino`
